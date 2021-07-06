@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PastaOrderfood.Models.OrderDetail>
+
+@{
+    ViewBag.Title = "OrderDetailIndex";
+}
+
+<h2 class="text-center">餐點明細</h2>
+
+
+<div class="container">
+    <table class="table table-bordered ">
+        <thead>
+            <tr>
+                <th>
+                    餐點名稱
+                </th>
+                <th>
+                    數量
+                </th>
+                <th>
+                    單價
+                </th>
+                <th>
+                    總價
+                </th>
+            </tr>
+        </thead>
+        <tbody id="DataSearching">
+            @foreach (var item in ViewBag.temp)
+            {
+                <tr>
+                    <td>
+                        @item.pasta_name
+                    </td>
+                    <td>
+                        @item.quantity
+                    </td>
+                    <td>
+                        @item.unitprice
+                    </td>
+                    <td>
+                        @item.total
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>@Html.ActionLink("返回", "OrderIndex")</div>
+</div>
